@@ -1,6 +1,6 @@
 # DGMD-2 e2 GitHub Repository
 + Description: Harvard DGMD-2 GitHub repository for Jerald Dana Cole
-+ By: *Jerald Dana Cole*\
++ By: *Jerald Dana Cole*
 + URL: http://crimsonsis.me
 + Subdomains:
 + http://practice.crimsonsis.me
