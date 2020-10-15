@@ -1,0 +1,28 @@
+body {
+    border: 1px solid black;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 100px;
+    margin-left: 100px;
+    background-color: #ffffe6;
+    padding: 20px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, td {
+    border: 1px solid red;
+    padding: 5px;
+}
+
+h1 {
+    color: blue;
+    text-align: center;
+}
+
+h3 {
+    font-style: italic; 
+    text-align: center;
+}
