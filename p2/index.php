@@ -5,7 +5,6 @@
 //  jerald_cole@alumni.harvard.edu
 //  (203) 982-0677
 
-
     session_start();
 
     if (isset($_SESSION ['results'])) {
@@ -21,8 +20,9 @@
         $results = [
             'choice' => null,
             'location' => null,
-            'message' => null,
+            'message' => "",
             'board' => $board,
+            'game_over' => false,
         ];
         $_SESSION ['results'] = $results;
     }

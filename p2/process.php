@@ -5,44 +5,40 @@
 //  jerald_cole@alumni.harvard.edu
 //  (203) 982-0677
 
-    include 'library.php';
-
     session_start();
+    include 'library.php';
 
     $choice = $_GET ['choice'];
     $location = $_GET ['location'];
+    $board = $_SESSION['results']['board'];
 
     $message = "";
 
     if (!is_numeric($location)) {
-        $message = "ERROR: " . $location . " IS NOT A NUMBER. Try again!";
+        $message = "ERROR: " . $location . " IS NOT A NUMBER.<p>Try again!";
     } elseif (!move_in_range($location)) {
-        $message = "ERROR: " . $location . " IS NOT IN THE RANGE [1..9]. Try again!";
+        $message = "ERROR: " . $location . " IS NOT IN THE RANGE [1..9].<p>Try again!";
     } elseif (!is_available($location, $board)) {
-        $message = "ERROR: " . $location . " IS TAKEN. Try again!";
+        $message = "ERROR: " . $location . " IS TAKEN.<p>Try again!";
     } else {
-        $board [$location] = $choice;  // set_X_or_O($choice, $location, $board);
+        $board [$location] = $choice;
         if (winner($choice, $board)) {
             $message = $choice . " WINS!";
+            $game_over = true;
+        } elseif (tie($board)) {
+            $message = "CAT'S GAME!";
+            $game_over = true;
+        } else {
+            $message = "Next move!";
         }
     }
-    
-    $count_filled = 0;
-    foreach ($board as $row => $row_value) {
-        if (!is_available($location, $board)) {
-            $count_filled++;
-        }
-    }
-    if ($count_filled == 9 and !winner($choice, $board)) {
-        $message = "TIE GAME!";
-    }
-    
-    // Prepare data for return
+
     $results = [
         'choice' => $choice,
         'location' => $location,
         'message' => $message,
         'board' => $board,
+        'game_over' => $game_over,
     ];
 
     $_SESSION ['results'] = $results;

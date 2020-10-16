@@ -2,8 +2,7 @@
 + By: Jerald Dana Cole
 + eMail: jerald_cole@alumni.harvard.edu
 + Phone: (203) 982-0677
-+ Local URL: http://crimsonsis.loc/e2/p2
-+ Production URL: http://e2p2.crimsonsis.me
++ Production URL (Local): http://crimsonsis.loc/e2/p2
 
 ## Outside sources
 + PhP Manual: https://www.php.net/manual/en/index.php

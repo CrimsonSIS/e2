@@ -6,6 +6,10 @@
     (203) 982-0677
 -->
 
+<?php $board = $_SESSION['results']['board']; ?>
+<?php $message = $_SESSION['results']['message']; ?>
+<?php $game_over = $_SESSION['results']['game_over']; ?>
+
 <link rel="stylesheet" href="styles.css">
 <?php include 'library.php'; ?>
 
@@ -32,27 +36,27 @@
         </ul>
         
         <form method='GET' action='process.php'>
-            <h2>Select X or O:</h2>
-            <input type='radio' name='choice' value='X' id='X'>
+            <h2>Select X or O</h2>
+            <input type='radio' name='choice' value='X' id='X' checked>
             <label for='X'>X</label>
             <br>
             <input type='radio' name='choice' value='O' id='O'>
             <label for='O'>O</label>
-            <h2>Select the Location of a square in the range [1 to 9]:</h2>
-            <?php print_board($board); ?>
-            <br>
+            <h2>Select a square by number [1 to 9]</h2>
             <input type='text' name='location' id='location' size='1'>
             <label for='location'>Location</label>
             <p>
             <button type='submit'>Mark Square!</button>
         </form>
-        
+        <?php echo "<h2>Results</h2>"; ?>
+        <?php print_board($board); ?> 
+        <br>      
         <?php
             if ($haveResults) {
-                echo "<h2>Results</h2>";
-                echo "You chose to put an $choice at location $location!<p>";
                 echo $message;
-                var_dump($board);
+            }
+            if ($game_over) {
+                echo "<p>Game over!";
             }
         ?>
     </body>

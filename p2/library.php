@@ -24,11 +24,6 @@
         echo "</table>";
     }
 
-    // function set_X_or_O($choice, $location, &$board)
-    // {
-    //     $board [$location] = $choice;
-    // }
-
     function move_in_range($location)
     {
         if ((int) $location >= 1 and (int) $location <= 9) {
@@ -47,7 +42,7 @@
         }
     }
 
-    function winner($choice, &$board)
+    function winner($choice, $board)
     {
         if ($board ['1'] == $choice and $board ['2'] == $choice and $board ['3'] == $choice) {
             return true;
@@ -64,6 +59,21 @@
         } elseif ($board ['1'] == $choice and $board ['5'] == $choice and $board ['9'] == $choice) {
             return true;
         } elseif ($board ['3'] == $choice and $board ['5'] == $choice and $board ['7'] == $choice) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function tie($board)
+    {
+        $square_count = 0;
+        foreach ($board as $row => $row_value) {
+            if (is_numeric($board [$row])) {
+                $square_count++;
+            }
+        }
+        if ($square_count == 9) {
             return true;
         } else {
             return false;
