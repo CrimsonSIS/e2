@@ -73,7 +73,7 @@
                 $square_count++;
             }
         }
-        if ($square_count == 9) {
+        if ($square_count == 0) {
             return true;
         } else {
             return false;
