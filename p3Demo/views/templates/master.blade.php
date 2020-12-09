@@ -16,8 +16,7 @@
 <body>
 
     <header>
-        <img id='logo' src='/images/Dice.png' alt='Dice Graphic'>
-        <h1>{{ $app->config('app.name') }}</h1>
+        <h1><img id='logo' src='/images/logo.png' alt='Heads or Tails Logo'></h1>
     </header>
 
     <main>

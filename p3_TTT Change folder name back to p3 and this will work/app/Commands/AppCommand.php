@@ -12,11 +12,9 @@ class AppCommand extends Command
     
     public function migrate()
     {
-        $this->app->db()->createTable('rounds', [
-            'tosses' => 'varchar(3)',
-            'bet' => 'float (8,2)',
-            'winnings' => 'float(8,2)',
-            'win' => 'tinyint(1)', # 1 or 0 for boolean
+        $this->app->db()->createTable('TTT_Rounds', [
+            'move' => 'varchar(1)',
+            'win' => 'tinyint(1)', # 1, 2, 3
             'time' => 'timestamp'
         ]);
     }
@@ -28,16 +26,18 @@ class AppCommand extends Command
 
         # Use a loop to create 10 past rounds
         for ($i = 0; $i < 10; $i++) {
+            $moves = ['X', 'O'];
+            $randomMove = array_rand($moves);
+
             # Set up a round
             $round = [
-                'tosses' => rand(0, 25),
-                'bet' => rand(0, 100),
-                'winnings' => rand(0, 100),
-                'win' => rand(0, 1),
+                'move' => $moves[$randomMove],
+                'win' => rand(1, 2, 3),
                 'time' => $faker->dateTimeThisMonth()->format('Y-m-d H:i:s')
             ];
+
             # Insert the round
-            $this->app->db()->insert('rounds', $round);
+            $this->app->db()->insert('TTT_Rounds', $round);
         }
     }
 }

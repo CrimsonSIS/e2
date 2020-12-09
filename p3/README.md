@@ -1,8 +1,9 @@
-# e2framework
+# Project 3: Roll 100!
++ By: Jerald Dana Cole
++ Production URL: <http://e2p3.crimsonsis.me>
 
-*e2framework* is a rudimentary PHP framework designed for the course [DGMD E-2 Web Programming for Beginners with PHP](https://hesweb.dev/e2).
-
-The goal of this software is to provide students an introduction to working with more advanced PHP frameworks such as Laravel and/or Symfony.
-
-+ __Documentation:__ <https://hesweb.dev/e2/notes/php/e2framework/installation>
-+ __Guide:__ <https://hesweb.dev/e2/notes/php/frameworks/intro>
+## Outside resources
++ w3Schools for HTML5 and CSS reference
++ Project 3 template and exemplar for Week 13
++ Documentation: <https://hesweb.dev/e2/notes/php/e2framework/installation>
++ Guide: <https://hesweb.dev/e2/notes/php/frameworks/intro>

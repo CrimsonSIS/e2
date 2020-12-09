@@ -1,10 +1,35 @@
 <?php
+namespace App\Controllers;
 
-//  Project 2: Naughts and Crosses (aka Tic-Tac-Toe)
-//  Jerald Dana Cole
-//  jerald_cole@alumni.harvard.edu
-//  (203) 982-0677
-    
+class AppController extends Controller
+{
+    public function index()
+    {
+        $haveResults = false;
+        $board = array(
+        "1"=>"1", "2"=>"2", "3"=>"3",
+        "4"=>"4", "5"=>"5", "6"=>"6",
+        "7"=>"7", "8"=>"8", "9"=>"9"
+        );
+        return $this->app->view('index', [
+            'haveResults' => $haveResults,
+            'board' => $board,
+        ]);
+    }
+
+    /*
+        public function history()
+        {
+            return 'This is the history page...';
+        }
+
+        public function round()
+        {
+            return 'This is the round page...';
+        }
+    */
+
+    # Library functions
     public function print_board($board)
     {
         $square_count = 0;
@@ -79,3 +104,4 @@
             return false;
         }
     }
+}
