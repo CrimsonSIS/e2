@@ -14,7 +14,8 @@ p3
     <li>This is a one player dice game.</li><br>
     <li>Your goal is to earn $100 (or more).</li><br>
     <li>Enter the number of tosses and a bet per toss.<p>The value of the toss is the product of number of dots on the face-up side of the dice times the bet amount.<p>For example, say you specify 6 tosses and bet $5 per dot. If a 2 faces-up, 2 x $5 = $10.<br> That process repeats a total of 6 tosses. </li><br>
-    <li>A cumulative tally of each roll is recorded for each player.></li><br <li>Again, if you reach or exceed $100, you win!</li>
+    <li>A cumulative tally of each roll is recorded for each player.</li><br>
+    <li>Again, if you reach or exceed $100, you win!</li>
 </ul>
 <h2>Game</h2>
 <form method='POST' action='/play'>
@@ -52,5 +53,5 @@ On {{$results['tosses']}} tosses at ${{$results['bet']}} per dice dot you earned
 </ul>
 @endif
 
-<a href='/'>Home</a>&nbsp;&bull;&nbsp;<a href='/history'>Game History</a>
+<a href='/'>Reset</a>&nbsp;&bull;&nbsp;<a href='/history'>Game History</a>
 @endsection
